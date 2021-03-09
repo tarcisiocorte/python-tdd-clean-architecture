@@ -7,6 +7,7 @@ import json
 
 app = Flask(__name__)
 
+
 def to_json(self):
     return {"email": self.email}
 
@@ -14,11 +15,9 @@ def to_json(self):
 @app.route('/', methods=['POST', 'GET'])
 def index():
     sut = SignUpController()
-    #result = sing.handle(request.form['email'], request.form[email_confirmation])
-    body = request.get_json()
-    result = sut.handle(body)
-    print(f"veja o que deu {result}")
-    return f"{result}"
+    resultJson = json.loads(sut.handle(json.dumps(request.get_json())))
+    return resultJson, resultJson["statusCode"]
+
 
 if __name__ == "__main__":
-    app.run(debug=True)    
+    app.run(debug=True)
