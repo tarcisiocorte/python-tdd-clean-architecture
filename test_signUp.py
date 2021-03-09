@@ -13,5 +13,9 @@ def test_should_return_400_if_no_name_is_provide():
         }
     bodyJson = json.dumps(body)       
     
-    statusCode = signUpController.handle(bodyJson)
-    assert statusCode == 400
+    result  = signUpController.handle(bodyJson)
+    resultJson = json.loads(result)
+
+    assert resultJson['statusCode'] == 400
+    assert resultJson['message'] == "Missing param: 'name'"
+    
