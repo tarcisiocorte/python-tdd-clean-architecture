@@ -5,7 +5,11 @@ import json
 class SignUpController:
     def handle(self, body):
         print(body)
-        if('name' not in body):            
-            result = {"statusCode": 400, "message":"Missing param: 'name'", "body":body}       
+        bodyJson = json.loads(body)
+        if bodyJson.get('name') == None:            
+            result = {"statusCode": 400, "message":"Missing param: 'name'", "body":body}
+
+        if bodyJson.get('email') == None:            
+            result = {"statusCode": 400, "message":"Missing param: 'email'", "body":body}       
                     
         return json.dumps(result)
