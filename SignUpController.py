@@ -6,7 +6,8 @@ app = Flask(__name__)
 class SignUpController:
     def handle(self, body):
         bodyJson = json.loads(body)
-        fields = ["name", "email", "email_confirmation", "password"]
+        fields = ["name", "email", "email_confirmation",
+                  "password", "password_confirmation"]
         for field in fields:
             if bodyJson.get(field) == None:
                 result = {"statusCode": 400,
