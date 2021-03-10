@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for, request, redirect
 import json
 
-from SignUpController import SignUpController
+from src.presentation.controllers.SignUpController import SignUpController
 
 
 def test_should_return_400_if_no_name_is_provide():
