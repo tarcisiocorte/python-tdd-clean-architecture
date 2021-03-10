@@ -32,3 +32,15 @@ def test_should_return_400_if_no_email_is_provide():
     resultJson = json.loads(signUpController.handle(json.dumps(body)))
     assert resultJson['statusCode'] == 400
     assert resultJson['message'] == "Missing param: 'email'"
+
+
+def test_should_return_400_if_no_email_confirmation_is_provide():
+    signUpController = SignUpController()
+    body = {
+        "name": "any_name",
+        "password": "any_password",
+        "password_confirmation": "any_password"
+    }
+    resultJson = json.loads(signUpController.handle(json.dumps(body)))
+    assert resultJson['statusCode'] == 400
+    assert resultJson['message'] == "Missing param: 'email_confirmation'"

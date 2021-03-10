@@ -5,14 +5,12 @@ app = Flask(__name__)
 
 class SignUpController:
     def handle(self, body):
-        print(body)
         bodyJson = json.loads(body)
-        if bodyJson.get('name') == None:
-            result = {"statusCode": 400,
-                      "message": "Missing param: 'name'", "body": bodyJson}
+        fields = ["name", "email", "email_confirmation"]
+        for field in fields:
+            if bodyJson.get(field) == None:
+                result = {"statusCode": 400,
+                          "message": f"Missing param: '{field}'", "body": bodyJson}
 
-        if bodyJson.get('email') == None:
-            result = {"statusCode": 400,
-                      "message": "Missing param: 'email'", "body": bodyJson}
-
+        print(result)
         return json.dumps(result)
