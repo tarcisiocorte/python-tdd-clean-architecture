@@ -1,1 +1,1 @@
-from .SignUpController import SignUpController
+from .signup_controller import SignUpController
