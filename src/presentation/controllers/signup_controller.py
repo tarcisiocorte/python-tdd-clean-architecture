@@ -9,19 +9,20 @@ app = Flask(__name__)
 class SignUpController(RouteInterface):
     def route(self, http_request: Type[HttpRequest]) -> HttpResponse:
 
-        fields = ["name", "email", "email_confirmation", "login"
+        fields = ["name", "email", "email_confirmation", "login",
                   "password", "password_confirmation"]
 
         response = {}
 
-        if "login" not in http_request.body:
-            response["status_code"] = 400
-            response["data"] = ""
-            print("passou aqui 1")
-        else:
-            response["status_code"] = 200
-            response["data"] = ""
-            print("passou aqui 1")
+        response["status_code"] = 200
+        response["data"] = ""
+
+        for field in fields:
+            print(field)
+            if field not in http_request.body:
+                response["status_code"] = 400
+                response["data"] = ""
+
         httpRes = HttpResponse(
             status_code=response["status_code"], body=response["data"]
         )
