@@ -21,7 +21,7 @@ def test_should_return_400_if_no_login_is_provide():
         "email": "any_email@mail.com",
         "email_confirmation": "any_email@mail.com",
         "password": "any_password",
-        "password_confirmation": "any_password"
+        "password_confirmation": "any_password",
     }
     request = HttpRequest(body=attributes)
     httpResponse = sut.route(request)
@@ -31,11 +31,11 @@ def test_should_return_400_if_no_login_is_provide():
 def test_should_return_400_if_no_name_is_provide():
     sut = SignUpController()
     attributes = {
-        "login": 'any_login',
+        "login": "any_login",
         "email": "any_email@mail.com",
         "email_confirmation": "any_email@mail.com",
         "password": "any_password",
-        "password_confirmation": "any_password"
+        "password_confirmation": "any_password",
     }
     request = HttpRequest(body=attributes)
     httpResponse = sut.route(request)
@@ -45,11 +45,11 @@ def test_should_return_400_if_no_name_is_provide():
 def test_should_return_400_if_no_email_is_provide():
     sut = SignUpController()
     attributes = {
-        "name": 'any_name',
+        "name": "any_name",
         "login": "any_login",
         "email_confirmation": "any_email@mail.com",
         "password": "any_password",
-        "password_confirmation": "any_password"
+        "password_confirmation": "any_password",
     }
     request = HttpRequest(body=attributes)
     httpResponse = sut.route(request)
@@ -59,11 +59,11 @@ def test_should_return_400_if_no_email_is_provide():
 def test_should_return_400_if_no_email_confirmation_is_provide():
     sut = SignUpController()
     attributes = {
-        "name": 'any_name',
+        "name": "any_name",
         "login": "any_login",
         "email": "any_email@mail.com",
         "password": "any_password",
-        "password_confirmation": "any_password"
+        "password_confirmation": "any_password",
     }
     request = HttpRequest(body=attributes)
     httpResponse = sut.route(request)
@@ -73,11 +73,11 @@ def test_should_return_400_if_no_email_confirmation_is_provide():
 def test_should_return_400_if_no_password_is_provide():
     sut = SignUpController()
     attributes = {
-        "name": 'any_name',
+        "name": "any_name",
         "login": "any_login",
         "email": "any_email@mail.com",
         "email_confirmation": "any_email@mail.com",
-        "password_confirmation": "any_password"
+        "password_confirmation": "any_password",
     }
     request = HttpRequest(body=attributes)
     httpResponse = sut.route(request)
@@ -87,11 +87,11 @@ def test_should_return_400_if_no_password_is_provide():
 def test_should_return_400_if_no_password_confirmation_is_provide():
     sut = SignUpController()
     attributes = {
-        "name": 'any_name',
+        "name": "any_name",
         "login": "any_login",
         "email": "any_email@mail.com",
         "email_confirmation": "any_email@mail.com",
-        "password": "any_password"
+        "password": "any_password",
     }
     request = HttpRequest(body=attributes)
     httpResponse = sut.route(request)
@@ -106,7 +106,7 @@ def test_should_return_200_if_valid_para_is_provided():
         "email": "any_email@mail.com",
         "email_confirmation": "any_email@mail.com",
         "password": "any_password",
-        "password_confirmation": "any_password"
+        "password_confirmation": "any_password",
     }
     request = HttpRequest(body=attributes)
     httpResponse = sut.route(request)

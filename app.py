@@ -12,12 +12,15 @@ def to_json(self):
     return {"email": self.email}
 
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route("/", methods=["POST", "GET"])
 def index():
     sut = SignUpController()
 
-    teste = {'email': 'ant_email@mail',
-             'email_confirmation': 'any_email@mail.com', 'password': 'any_password'}
+    teste = {
+        "email": "ant_email@mail",
+        "email_confirmation": "any_email@mail.com",
+        "password": "any_password",
+    }
 
     result = sut.handle(teste)
     return result
