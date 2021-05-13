@@ -4,10 +4,10 @@ from src.presentation.helpers import HttpRequest, HttpResponse
 
 
 class Controller(ABC):
-    """ Interface to Controller """
+    """Interface to Controller"""
 
     @abstractmethod
     def handle(self, http_request: Type[HttpResponse]) -> HttpResponse:
-        """ Defining Controller """
+        """Defining Controller"""
 
     raise Exception("Should implement method: handl")
