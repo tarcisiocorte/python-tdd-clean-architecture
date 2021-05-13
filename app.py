@@ -1,7 +1,4 @@
 from flask import Flask, render_template, url_for, request, redirect, jsonify
-from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
-from src.presentation.controllers.SignUpController import SignUpController
 import json
 
 
